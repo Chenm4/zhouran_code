@@ -8,9 +8,6 @@ classifier = pipeline('text-classification', model='j-hartmann/emotion-english-d
 def emotion_type(excel_folder, excel_emotion_output):
     # 确保输出目录存在
     os.makedirs(excel_emotion_output, exist_ok=True)
-
-
-
     def classify_emotions(text):
         results = classifier(text)
         return results[0]
